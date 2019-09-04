@@ -33,9 +33,9 @@ function insertNewRecord(data) {
 }
 
 function onChkDelete() {
-  var selecionados = document.querySelectorAll('td [type="checkbox"]:checked')
-  for (let i = 0; i < selecionados.length; i++) {
-    if (confirm('Tarefa concluida ?')) {
+  if (confirm('Tarefa(s) Concluida(s) ?')) {
+    var selecionados = document.querySelectorAll('td [type="checkbox"]:checked')
+    for (let i = 0; i < selecionados.length; i++) {
       selecionados[i].parentNode.parentNode.remove()
     }
   }
