@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> CRUD Tarefas</title>
-    <link rel="stylesheet" href="style.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> CRUD Tarefas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <table>
-        <tr>
+  <table>
+    <tr>
+      <td>
+        <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+          <div class="list">
+            <label><H1>Informar Tarefa</H1></label>
+            <input type="text" name="tarefa" id="txtTarefa">
+          </div>
+          <br>
+          <div class="form-action-buttons">
+            <input type="submit" value="Enviar">
+          </div>
+        </form>
+      </td>
+      <td>
+        <table class="list" id="listaTarefas">
+          <thead>
+            <tr>
+              <th>NOME DA TAREFA</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+          <tr>
             <td>
-                <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
-                    <div>
-                        <label>Informar a TAREFA</label>
-                        <input type="text" name="tarefa" id="txtTarefa">
-                    </div>
-                    <br>
-                    <div class="form-action-buttons">
-                        <input type="submit" value="Enviar">
-                    </div>
-                </form>
+              <form onsubmit="event.preventDefault(); onChkDelete();" autocomplete="off">
+                <div class="form-action-buttons">
+                  <input type="submit" value="Apagar concluidas">
+                </div>
+              </form>
             </td>
-            <td>
-                <table class="list" id="listaTarefas">
-                    <thead>
-                        <tr>
-                            <th>NOME DA TAREFA</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-    </table>
-    <script src="script.js"></script>
-    
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <script src="script.js"></script>
+
 </body>
+
 </html>
 <!--
     tr = LINHA   th = CABEÇALHO da COLUNA    td = CÉLULA da TABELA 

@@ -1,5 +1,6 @@
 var selectedRow = null;
 
+
 function onFormSubmit() {
   var formData = readFormData();
   if (selectedRow == null)
@@ -26,13 +27,23 @@ function insertNewRecord(data) {
 
   cell2 = newRow.insertCell(1);
   cell2.innerHTML = `<a onClick="onEdit(this)">Editar</a> 
-                     <a onClick="onDelete(this)">Deletar</a>`;
+                     <a onClick="onDelete(this)">Deletar</a> 
+                     <input type="checkbox" value="on"> Tarefa concluida`;
+
+}
+
+function onChkDelete() {
+  var selecionados = document.querySelectorAll('td [type="checkbox"]:checked')
+  for (let i = 0; i < selecionados.length; i++) {
+    if (confirm('Tarefa concluida ?')) {
+      selecionados[i].parentNode.parentNode.remove()
+    }
+  }
 }
 
 function resetForm() {
   document.getElementById("txtTarefa").value = "";
   selectedRow = null;
-
 }
 
 function onEdit(td) {
